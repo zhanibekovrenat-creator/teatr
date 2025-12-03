@@ -1,65 +1,4 @@
-/* Основной стиль */
-body {
-margin: 0;
-padding: 0;
-font-family: Georgia, serif;
-background: #faf9f7;
-}
-header {
-background: #1b1f3b;
-color: white;
-display: flex;
-justify-content: space-between;
-padding: 20px 50px;
-align-items: center;
-}
-header nav ul {
-display: flex;
-gap: 25px;
-list-style: none;
-}
-header nav a {
-color: white;
-text-decoration: none;
-font-size: 1.5em;
-}
-
-.hero-text h2 {
-font-size: 3em;
-}
-.hero-photos img {
-width: 28%;
-margin: 10px;
-border-radius: 15px;
-}
-.carousel-section {
-padding: 50px;
-text-align: center;
-}
-.carousel-track {
-display: flex;
-transition: 0.5s;
-}
-.carousel-item {
-min-width: 280px;
-background: white;
-border-radius: 10px;
-margin: 0 15px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-.carousel-item img {
-width: 100%;
-border-radius: 10px 10px 0 0;
-}
-.gallery-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 15px;
-padding: 20px;
-}
-
-/* ------------ ОБЩИЙ СТИЛЬ ------------ */
-
+/* ---------------- ОБЩИЕ СТИЛИ ---------------- */
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
@@ -79,8 +18,134 @@ p {
     line-height: 1.7;
 }
 
-/* ------------ СЕКЦИЯ КОЛЛЕКТИВА ------------ */
+/* ---------------- HEADER ---------------- */
+header {
+    background: #1b1f3b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
 
+header .logo h2 {
+    font-size: 1.5em;
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* ---------------- ABOUT ---------------- */
+.about {
+    padding: 50px 20px;
+    background: #f7f4ef;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.about-container img {
+    width: 400px;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #5a2e0b;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* ---------------- CAROUSEL ---------------- */
+.carousel-section {
+    padding: 50px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.carousel-item {
+    min-width: 280px;
+    background: white;
+    border-radius: 10px;
+    margin: 0 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+button.prev, button.next {
+    background: #5a2e0b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ---------------- GALLERY ---------------- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    height: 200px;
+}
+
+/* ---------------- TEAM ---------------- */
 .team {
     padding: 40px 20px;
     max-width: 1200px;
@@ -138,8 +203,7 @@ p {
     font-size: 15px;
 }
 
-/* ------------ КОНТАКТЫ ------------ */
-
+/* ---------------- CONTACT ---------------- */
 .contact {
     background: #fff;
     padding: 40px 20px;
@@ -157,8 +221,7 @@ p {
     color: #555;
 }
 
-/* ------------ ФУТЕР ------------ */
-
+/* ---------------- FOOTER ---------------- */
 footer {
     background: #5a2e0b;
     color: #fff;
@@ -168,9 +231,14 @@ footer {
     font-size: 15px;
 }
 
-/* ------------ АДАПТИВНОСТЬ ------------ */
+/* ---------------- АДАПТИВНОСТЬ ---------------- */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     h2 {
         font-size: 26px;
     }
@@ -178,65 +246,35 @@ footer {
     .team-item img {
         height: 220px;
     }
-}
-   
 
-.about {
-  padding: 50px 20px;
-  background: #f7f4ef;
+    .carousel-item {
+        min-width: 220px;
+    }
 }
 
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  max-width: 1000px;
-  margin: auto;
-  flex-wrap: wrap; /* чтобы на мобильных экранах элементы переносились */
-}
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
 
-.about-container img {
-  width: 400px;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
+    .carousel-item {
+        min-width: 180px;
+        margin: 0 10px;
+    }
 
-.about-text {
-  flex: 1; /* текст занимает оставшееся пространство */
-}
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
 
-.about-text h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  color: #5a2e0b;
-}
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.about-text p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #333;
-}
-
-/* Адаптивность для маленьких экранов */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-text {
-    margin-top: 20px;
-  }
-}
-
-/* Универсальное расширение всех блоков */
-.about-container,
-.carousel-section,
-.gallery,
-.team,
-.contact {
-    max-width: 1300px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    .about-container img {
+        width: 100%;
+        height: auto;
+    }
 }
