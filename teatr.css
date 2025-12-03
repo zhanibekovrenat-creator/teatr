@@ -1,0 +1,242 @@
+/* Основной стиль */
+body {
+margin: 0;
+padding: 0;
+font-family: Georgia, serif;
+background: #faf9f7;
+}
+header {
+background: #1b1f3b;
+color: white;
+display: flex;
+justify-content: space-between;
+padding: 20px 50px;
+align-items: center;
+}
+header nav ul {
+display: flex;
+gap: 25px;
+list-style: none;
+}
+header nav a {
+color: white;
+text-decoration: none;
+font-size: 1.5em;
+}
+
+.hero-text h2 {
+font-size: 3em;
+}
+.hero-photos img {
+width: 28%;
+margin: 10px;
+border-radius: 15px;
+}
+.carousel-section {
+padding: 50px;
+text-align: center;
+}
+.carousel-track {
+display: flex;
+transition: 0.5s;
+}
+.carousel-item {
+min-width: 280px;
+background: white;
+border-radius: 10px;
+margin: 0 15px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.carousel-item img {
+width: 100%;
+border-radius: 10px 10px 0 0;
+}
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+padding: 20px;
+}
+
+/* ------------ ОБЩИЙ СТИЛЬ ------------ */
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f7f4ef;
+    color: #2a2a2a;
+}
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.7;
+}
+
+/* ------------ СЕКЦИЯ КОЛЛЕКТИВА ------------ */
+
+.team {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.team-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #444;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.team-item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.team-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+}
+
+.team-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.team-item h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #5a2e0b;
+}
+
+.team-item .name {
+    font-weight: bold;
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.team-item .desc {
+    color: #555;
+    font-size: 15px;
+}
+
+/* ------------ КОНТАКТЫ ------------ */
+
+.contact {
+    background: #fff;
+    padding: 40px 20px;
+    margin-top: 50px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+}
+
+.contact p {
+    text-align: center;
+    font-size: 17px;
+}
+
+.contact-desc {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* ------------ ФУТЕР ------------ */
+
+footer {
+    background: #5a2e0b;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* ------------ АДАПТИВНОСТЬ ------------ */
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 26px;
+    }
+
+    .team-item img {
+        height: 220px;
+    }
+}
+   
+
+.about {
+  padding: 50px 20px;
+  background: #f7f4ef;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap; /* чтобы на мобильных экранах элементы переносились */
+}
+
+.about-container img {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 1; /* текст занимает оставшееся пространство */
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #5a2e0b;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    margin-top: 20px;
+  }
+}
+
+/* Универсальное расширение всех блоков */
+.about-container,
+.carousel-section,
+.gallery,
+.team,
+.contact {
+    max-width: 1300px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
